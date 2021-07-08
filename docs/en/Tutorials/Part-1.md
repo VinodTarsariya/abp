@@ -190,7 +190,7 @@ This will add a new migration class to the project:
 ![bookstore-efcore-migration](./images/bookstore-efcore-migration.png)
 
 > If you are using Visual Studio, you may want to use `Add-Migration Created_Book_Entity -c BookStoreMigrationsDbContext` and `Update-Database -c BookStoreMigrationsDbContext` commands in the *Package Manager Console (PMC)*. In this case, ensure that {{if UI=="MVC"}}`Acme.BookStore.Web`{{else if UI=="BlazorServer"}}`Acme.BookStore.Blazor`{{else if UI=="Blazor" || UI=="NG"}}`Acme.BookStore.HttpApi.Host`{{end}} is the startup project and `Acme.BookStore.EntityFrameworkCore.DbMigrations` is the *Default Project* in PMC.
-
+If you get this error: `Update-Database : Parameter cannot be processed because the parameter name 'c' is ambiguous. Possible matches include: -Connection -Context.` then replace -c with -Context in your command.
 {{end}}
 
 ### Add Sample Seed Data
